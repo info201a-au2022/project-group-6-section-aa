@@ -1,7 +1,7 @@
 ---
 title: "Your Project Title"
-author: ""
-date: "1/22/2022"
+author: "Eunji Shin, Keerthi Renduchintala, Zhien He"
+date: "11/14/2022"
 output: html_document
 ---
 
@@ -38,25 +38,29 @@ msg <- data_access_test(" Morgan!")
 ```{r}
 source("../source/summaryinfo.R")
 ```
-
+For this part, we found five values that are: highest fertility rate, highest GDP, lowest GDP, highest education attainment, highest mortality rate. From our functions, we were able to find out that Niger is the country that has the highest fertility. Also, we found that the United States has the highest GDP and Nauru has the lowest GDP. Kazakhstan has the highest education attainment levels and Sierre Leone has the highest mortality rate.
 
 ### Table 
-
+```{r}
+source("../source/summary_table.R")
+```
+We merged three different data sets (fertility rate, gdp, education attainment). By completing this, we realized that GDP numbers are very much bigger than the other features.
 
 ### Chart 1 
 ```{r}
-source("../source/chart_1")
+source("../source/chart_1.R")
 ```
-This chart is a scatterplot of gdp and fertility. This scatterplot will allow us to see the correlation between gdp and fertility rates. We can use this to see whether high gdp countries are correlated with high or low fertility rates
+This chart is a scatterplot of gdp and fertility. This scatterplot will allow us to see the correlation between gdp and fertility rates. We can use this to see whether high gdp countries are correlated with high or low fertility rates.
+
 ### Chart 2
 ```{r}
-source("../source/chart_2")
+source("../source/chart_2.R")
 ```
 This chart is a barchart with the two bars being gdp and educational attainment for women. This bar chart will help us determine the correlation between how high a gdp of a country is and the educational attainment. We were able to observe that tall bars for gdp were accompanied by relatively tall bars for educational attainment. 
 
 ### Chart 3
 ```{r}
-source("../source/chart_3")
+source("../source/chart_3.R")
 ```
 This chart is a world map with mortality rates shaded. This map allows us to visually see where higher mortality rates are observable. From this we are able to see that African countries have the highest mortality rates. 
 
