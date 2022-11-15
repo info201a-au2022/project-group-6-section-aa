@@ -48,22 +48,5 @@ summary_info$highest_mortality <- mortality_rate %>%
 
 
 
-summary_info$highest_reproductive <- reproductive_age %>% 
-  select(Location, Frist.Tooltip) %>%
-  filter(First.Tooltip == max(First.Tooltip, na.rm = T)) %>% 
-  pull(Location)
-
-test <- Fertility_rate %>% 
-  group_by(Country.Name) %>% 
-  summarise(avg_fertality = mean(X2005, na.rm = TRUE)) %>% 
-  filter(avg_fertality == max(avg_fertality)) %>% 
-  select(Country.Name)
 
 
-# summary_info.R 
-# A source file that takes in a dataset and returns a list of info about it:
-summary_info <- list()
-summary_info$num_observations <- nrow(my_dataframe)
-summary_info$some_max_value <- my_dataframe %>%
-  filter(some_var == max(some_var, na.rm = T)) %>%
-  select(some_label)

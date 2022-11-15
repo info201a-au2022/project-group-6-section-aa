@@ -1,6 +1,6 @@
 ---
 title: "Your Project Title"
-author: "project team members"
+author: ""
 date: "1/22/2022"
 output: html_document
 ---
@@ -32,6 +32,34 @@ msg <- data_access_test(" Morgan!")
 ```
 
 > `r msg` Hope you have a good day!! 
+
+### Summary Table
+
+```{r}
+source("../source/summaryinfo.R")
+```
+
+
+### Table 
+
+
+### Chart 1 
+```{r}
+source("../source/chart_1")
+```
+This chart is a scatterplot of gdp and fertility. This scatterplot will allow us to see the correlation between gdp and fertility rates. We can use this to see whether high gdp countries are correlated with high or low fertility rates
+### Chart 2
+```{r}
+source("../source/chart_2")
+```
+This chart is a barchart with the two bars being gdp and educational attainment for women. This bar chart will help us determine the correlation between how high a gdp of a country is and the educational attainment. We were able to observe that tall bars for gdp were accompanied by relatively tall bars for educational attainment. 
+
+### Chart 3
+```{r}
+source("../source/chart_3")
+```
+This chart is a world map with mortality rates shaded. This map allows us to visually see where higher mortality rates are observable. From this we are able to see that African countries have the highest mortality rates. 
+
 
 ## ABOUT THIS FILE: 
 

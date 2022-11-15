@@ -14,9 +14,10 @@ new_education <- education %>%
 gdp_education <- left_join(new_education, new_gdp_values, by = "Country.Name") %>% 
   rename(education_attainment = years_2016_2021, gdp = X2020)
 
-barchart_gdp_education <- ggplot(data = gdp_education, aes(x = gdp and education)) +
-  geom_bar(mapping = aes(x = gdp, y = fertility)) +
+gdp_education_long <- gdp_education %>% pivot_longer(!Country.Name, names_to = "Type",values_to = "Count" )
+barchart_gdp_education <- ggplot(gdp_education_long, aes(x = Country.Name, y = Count, fill = Type)) +
+  geom_col(position = position_dodge(0.7))
   labs(title = "GDP versus Fertility rate")
 
-plot(scatterplot_gdp_fertility)
+plot(barchart_gdp_education)
 
