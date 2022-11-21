@@ -27,7 +27,7 @@ max(testtest$X2020, na.rm = TRUE)
 
 
 ?type
-type(testtest$X2020)
+#type(testtest$X2020)
 
 View(gdp)
 
@@ -92,6 +92,7 @@ merged <- bind_rows(new_gdp, new_education, new_fertility, new_mortality, new_re
 summary <- merged %>% 
   group_by(indicator) %>% 
   summarize(years = max(years, na.rm = TRUE)) %>% 
-  filter(years == max(years)) %>% 
-  pull(Country.Name)
-  arrange(Country.Name)
+  filter(years == max(years)) 
+
+# Pull(Country.Name)
+# Arrange(Country.Name)
