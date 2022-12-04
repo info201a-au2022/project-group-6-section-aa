@@ -8,17 +8,36 @@
 #
 
 library(shiny)
-shinyUI(fluidPage(
- 
-  titlePanel("Ranking Percentage of Educational Attainment for Women based on Country GDP"),
-  
+  #theme = bs_theme(version = 4, bootswatch = "Morph"),
+page_one <- tabPanel(
+   "First Page",
+   titlePanel("Ranking Percentage of Educational Attainment for Women based on Country GDP"),
+   sidebarLayout(
+     sidebarPanel(
+       uiOutput("selectContinent")
+     ),
+     mainPanel(
+       leafletOutput("gdp_education_map"),
+     )
+   )
+ )
+page_two <- tabPanel(
+  "Second Page",
+  titlePanel("Correlation between Percentage of Educational Attainment for Women and Fertility Rate"),
   sidebarLayout(
     sidebarPanel(
-      uiOutput("selectContinent")
+      uiOutput("selectContinents")
     ),
-  
     mainPanel(
-      leafletOutput("gdp_education_map"),
+      plotOutput("fertility_education_scatterplot"),
     )
   )
-))
+)
+ui <- navbarPage(
+  "My App",
+  page_one,
+  page_two
+)
+
+  
+ 

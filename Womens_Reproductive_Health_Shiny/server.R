@@ -13,6 +13,7 @@ library(leaflet)
 library(sf)
 library(rgdal)
 library(tidyverse)
+library(ggplot2)
 
 
 
@@ -66,8 +67,8 @@ Gdp_education_df <- combined3 %>%
 Gdp_education_df[148,24] <- "Australia"
 #---------------------------------------# end data wrangling for interactive map
 #---------------------# Data wrangling for scatterplot
-ibrary(dplyr)
-library(ggplot2)
+
+
 
 ## Datasets of education and fertility
 #dataset1 = new_education
@@ -83,24 +84,17 @@ select(Country.Name, X2020) %>%
 education_fertility <- left_join(new_education, new_fertility, by = "Country.Name")
 education_fertility %>% 
   drop_na() -> education_fertility_df
+Continents <- c("South America", "Europe", "Australia", "Europe", "Asia", "Europe", "Asia", "Europe", "Asia", "Europe", "South America", "Europe", "Africa", "North America", "South America", "South America", "North America","Europe", "Europe", "Europe", "North America", "South America", "South America", "Europe", "Australia", "Europe", "Europe", "Asia", "Europe", "Europe", "Africa", "South America", "Europe", "Asia", "Europe", "Asia", "Asia", "Europe", "Europe", "Asia", "Africa", "Europe", "North America", "Africa", "Europe", "Australia", "North America", "Europe", "Asia", "South America", "South America", "Europe", "Europe", "Asia", "Europe", "Africa", "Asia", "Africa", "Europe", "Asia", "Europe", "Africa", "Asia", "Europe", "Asia", "Africa", "Europe", "Europe", "Asia", "Asia", "Asia", "Europe", "North America", "South America", "Asia","World", "Africa")
 
-Plot_education_fertility <- function() {
-scatterplot <- ggplot(data = education_fertility) +
-geom_point(mapping = aes(x = levels, y = X2020)) +
-labs(
-x = "Education Levels",
-y = "Fertility Rate",
-title = "Education Level versus Fertility Rate"
-)
-return(scatterplot)
-}
-
-Plot_education_fertility()
+scatterplot_df <- education_fertility_df %>% 
+  mutate(Continent = Continents) 
+fixed_scatterplot_df <- scatterplot_df[-c(47, 63, 76),] %>% 
+  rename(Continents = Continent)
+#-----------------# end scatterplot data wrangling 
 
 
 
-
-# Define server logic required to draw a histogram
+# Define server logic required to draw map
 shinyServer(function(input, output) {
   output$selectContinent <- renderUI({
     selectInput("Continent", "Choose a Continent", choices = unique(Gdp_education_df$Continent))
@@ -140,6 +134,29 @@ shinyServer(function(input, output) {
   
   output$gdp_education_map <- renderLeaflet({
     continent_data()
+  })
+  
+  # Define Define server logic required to draw scatterplot
+  
+  output$selectContinents <- renderUI({
+    selectInput("Continents", "Choose a Continent", choices = unique(fixed_scatterplot_df$Continents))
+  })
+  
+  scatterplot <- reactive({
+    plotContinent <- fixed_scatterplot_df %>% 
+      filter(Continents %in% input$Continents)
+    
+    ggplot(plotContinent, aes(x = avg_educ_attainment_2016_2021, y = BirthsPerWoman)) +
+      geom_point(aes(color = Country.Name)) +
+      labs(
+        x = "Education Levels",
+        y = "Fertility Rate",
+        title = "Education Level versus Fertility Rate in selected Continent")
+    
+  })
+  
+  output$fertility_education_scatterplot <- renderPlot({
+    scatterplot()
   })
 })
 
