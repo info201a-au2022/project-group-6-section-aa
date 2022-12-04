@@ -17,7 +17,7 @@ library(tidyverse)
 
 
 #Tab2: How does a country's GDP impact women’s education level?
-#data wrangling
+#data wrangling for map ------------------------------#
 #Create dataframe
 gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/GDP(current%20%20).csv")
 gdp %>% 
@@ -50,7 +50,6 @@ ranked1_gdp_educational_attainment <- ranked_gdp_educational_attainment %>%
   arrange(-overall_ranking) %>% 
   mutate(Rank = vector_overall_ranking) %>% 
   rename(NAME = Country.Name)
-
 #Create shapefile
 
 world_spdf <- read_sf(dsn = "/Users/keerthirenduchintala/Documents/info201/project-group-6-section-aa/data/world_shape_file/TM_WORLD_BORDERS_SIMPL-0.3.shp", layer = "TM_WORLD_BORDERS_SIMPL-0.3")
@@ -65,7 +64,40 @@ Gdp_education_df <- combined3 %>%
          EducationRank = Education_ranking,
          RankEducationbasedonGDP = Rank)
 Gdp_education_df[148,24] <- "Australia"
-#---------------------------------------# end data wrangling
+#---------------------------------------# end data wrangling for interactive map
+#---------------------# Data wrangling for scatterplot
+ibrary(dplyr)
+library(ggplot2)
+
+## Datasets of education and fertility
+#dataset1 = new_education
+fertility <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/Fertality_rate.csv")
+
+## Get the education and fertility data
+
+
+new_fertility <- fertility %>%
+select(Country.Name, X2020) %>% 
+  rename(BirthsPerWoman = X2020)
+
+education_fertility <- left_join(new_education, new_fertility, by = "Country.Name")
+education_fertility %>% 
+  drop_na() -> education_fertility_df
+
+Plot_education_fertility <- function() {
+scatterplot <- ggplot(data = education_fertility) +
+geom_point(mapping = aes(x = levels, y = X2020)) +
+labs(
+x = "Education Levels",
+y = "Fertility Rate",
+title = "Education Level versus Fertility Rate"
+)
+return(scatterplot)
+}
+
+Plot_education_fertility()
+
+
 
 
 # Define server logic required to draw a histogram
