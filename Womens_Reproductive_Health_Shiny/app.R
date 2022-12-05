@@ -1,12 +1,12 @@
 #install.packages('rsconnect')
-install.packages("bslib")
+
 library(shiny)
 library(bslib)
 
 
 
 
-# Define UI for application that draws a histogram
+# Define UI for application 
 source("ui.R")
 
 # Define Server logic

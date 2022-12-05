@@ -22,9 +22,9 @@ library(ggplot2)
 #data wrangling for map ------------------------------#
 #Create dataframe
 gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/GDP(current%20%20).csv")
-gdp %>% 
+GDP_2020 <- gdp %>% 
   select(Country.Name:Indicator.Name, X2020) %>% 
-  rename (GDP = X2020) -> GDP_2020
+  rename (GDP = X2020) 
 GDP_2020_to_combine_map <- GDP_2020 %>% 
   rename (NAME = Country.Name) 
 
@@ -38,11 +38,11 @@ new_education <- education %>%
 gdp_educational_attainment <- left_join(GDP_2020, new_education, by = "Country.Name") %>% 
   drop_na() 
 n_gdp_educational_attainment<- gdp_educational_attainment[-c(32, 50, 62, 69, 77), ]
-n_gdp_educational_attainment %>% 
-  arrange(-GDP) -> arranged_gdp_educational_attainment
-vector_GDP_ranking = c(1:74)
-vector_education_ranking = c(1:74)
-vector_overall_ranking = c(1:74)
+arranged_gdp_educational_attainment <- n_gdp_educational_attainment %>% 
+  arrange(-GDP) 
+vector_GDP_ranking <- c(1:74)
+vector_education_ranking <- c(1:74)
+vector_overall_ranking <- c(1:74)
 ranked_gdp_educational_attainment <- arranged_gdp_educational_attainment %>% 
   mutate(GDP_ranking = vector_GDP_ranking)
 ranked1_gdp_educational_attainment <- ranked_gdp_educational_attainment %>% 
@@ -54,14 +54,14 @@ ranked1_gdp_educational_attainment <- ranked_gdp_educational_attainment %>%
   rename(NAME = Country.Name)
 #Create shapefile
 
-world_spdf <- read_sf(dsn = "/Users/keerthirenduchintala/Documents/info201/project-group-6-section-aa/data/world_shape_file/TM_WORLD_BORDERS_SIMPL-0.3.shp", layer = "TM_WORLD_BORDERS_SIMPL-0.3")
-combined_df<- left_join(world_spdf, GDP_2020_to_combine_map, by = "NAME") %>% 
+world_spdf <- read_sf(dsn = "./world_shape_file/TM_WORLD_BORDERS_SIMPL-0.3.shp", layer = "TM_WORLD_BORDERS_SIMPL-0.3")
+shape_file_combined_df<- left_join(world_spdf, GDP_2020_to_combine_map, by = "NAME") %>% 
   drop_na()
-combined2 <- left_join(combined_df, ranked1_gdp_educational_attainment, by = "NAME")
+interactive_map_combined <- left_join(shape_file_combined_df, ranked1_gdp_educational_attainment, by = "NAME")
 Continent <- c("South America", "Africa", "Asia", "Europe", "Asia", "Africa", "North America", "South America", "Australia", "Asia", "South America", "North America", "Asia", "Europe", "Europe", "Europe", "Africa", "Australia", "South America", "Europe", "Asia", "North America", "Asia", "Asia", "Africa", "Asia", "Asia", "Asia", "South America", "North America", "Africa", "Africa", "Africa", "South America", "North America", "Africa", "South America", "Europe", "Europe", "Africa", "North America", "North America", "South America", "Europe", "Africa", "Europe", "South America", "Africa", "Europe", "Europe", "Asia", "Australia", "Europe", "Africa", "Europe", "Africa", "North America", "North America", "Europe", "Asia", "Europe", "South America", "Africa", "South America", "North America", "South America", "Europe", "Europe", "Europe", "Asia", "Asia", "Europe", "Africa", "Asia", "Asia", "North America", "Asia", "Africa", "Australia", "Asia", "Asia", "Asia", "Europe", "Europe", "Europe", "Europe", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Europe", "Asia", "Asia", "North America", "Asia", "Africa", "Africa", "Australia", "Africa", "South America", "Europe", "Europe", "Europe", "Europe", "Europe", "Europe", "Australia", "Africa", "Europe", "Europe", "Asia", "Australia", "South America", "South America", "Australia", "South America", "South America","Asia", "Europe", "North America", "South America", "Australia", "Africa", "Asia", "Europe", "Asia", "North America", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Africa", "Europe", "Africa", "Asia", "Africa", "Europe", "Africa", "Europe", "Europe", "South America", "Asia", "Asia"," Australia","Africa", "Africa", "Africa", "Australia", "Africa", "Europe", "Europe", "North America", "Africa", "South America", "Asia", "Africa", "Africa", "Africa", "Africa", "Asia", "Asia", "Asia", "Australia", "Australia", "Europe", "Europe", "Europe")
-combined2 %>% 
-  mutate(Continent = Continent) -> combined3
-Gdp_education_df <- combined3 %>% 
+combined_with_continents <- interactive_map_combined %>% 
+  mutate(Continent = Continent) 
+Gdp_education_df <- combined_with_continents %>% 
   rename(GDP = GDP.x, 
          EducationRank = Education_ranking,
          RankEducationbasedonGDP = Rank)
@@ -133,7 +133,7 @@ shinyServer(function(input, output) {
     mapContinent <- Gdp_education_df %>% 
       filter(Continent %in% input$Continent)
     
-    palette = palette <- colorNumeric(palette = "magma", 
+    palette <- colorQuantile(palette = "magma", 
                                       domain = mapContinent$GDP, 
                                       na.color= "transparent")
     leaflet(mapContinent) %>% 
