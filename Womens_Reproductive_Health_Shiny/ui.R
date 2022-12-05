@@ -23,20 +23,35 @@ page_one <- tabPanel(
  )
 page_two <- tabPanel(
   "Second Page",
+  titlePanel("hi"),
+  sidebarLayout(
+    sidebarPanel(
+      uiOutput("selectRank_category")
+    ),
+    mainPanel(
+      plotlyOutput("family_mortality_barchart"),
+    )
+  )
+)
+
+page_three <- tabPanel(
+  "Third Page",
   titlePanel("Correlation between Percentage of Educational Attainment for Women and Fertility Rate"),
   sidebarLayout(
     sidebarPanel(
       uiOutput("selectContinents")
     ),
     mainPanel(
-      plotOutput("fertility_education_scatterplot"),
+      plotlyOutput("fertility_education_scatterplot"),
     )
   )
 )
+
 ui <- navbarPage(
   "My App",
   page_one,
-  page_two
+  page_two,
+  page_three
 )
 
   

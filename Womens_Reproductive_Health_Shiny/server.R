@@ -57,7 +57,7 @@ world_spdf <- read_sf(dsn = "/Users/keerthirenduchintala/Documents/info201/proje
 combined_df<- left_join(world_spdf, GDP_2020_to_combine_map, by = "NAME") %>% 
   drop_na()
 combined2 <- left_join(combined_df, ranked1_gdp_educational_attainment, by = "NAME")
-Continent <- c("South America", "Africa", "Asia", "Europe", "Asia", "Africa", "North America", "South America", "Australia", "Asia", "South America", "North America", "Asia", "Europe", "Europe", "Europe", "Africa", "Australia", "South America", "Europe", "Asia", "North America", "Asia", "Asia", "Africa", "Asia", "Asia", "Asia", "South America", "North America", "Africa", "Africa", "Africa", "South America", "North America", "Africa", "South America", "Europe", "Europe", "Africa", "North America", "North America", "South America", "Europe", "Africa", "Europe", "South America", "Africa", "Europe", "Europe", "Asia", "Australia", "Europe", "Africa", "Europe", "Africa", "North America", "North America", "Europe", "Asia", "Europe", "South America", "Africa", "South America", "North America", "South America", "Europe", "Europe", "Europe", "Asia", "Asia", "Europe", "Africa", "Asia", "Asia", "North America", "Asia", "Africa", "Australia", "Asia", "Asia", "Asia", "Europe", "Europe", "Europe", "Europe", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Europe", "Asia", "Asia", "South America", "Asia", "Africa", "Africa", "Australia", "Africa", "South America", "Europe", "Europe", "Europe", "Europe", "Europe", "Europe", "Australia", "Africa", "Europe", "Europe", "Asia", "Australia", "South America", "South America", "Australia", "South America", "South America","Asia", "Europe", "North America", "South America", "Australia", "Africa", "Asia", "Europe", "Asia", "North America", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Africa", "Europe", "Africa", "Asia", "Africa", "Europe", "Africa", "Europe", "Europe", "South America", "Asia", "Asia"," Australia","Africa", "Africa", "Africa", "Australia", "Africa", "Europe", "Europe", "North America", "Africa", "South America", "Asia", "Africa", "Africa", "Africa", "Africa", "Asia", "Asia", "Asia", "Australia", "Australia", "Europe", "Europe", "Europe")
+Continent <- c("South America", "Africa", "Asia", "Europe", "Asia", "Africa", "North America", "South America", "Australia", "Asia", "South America", "North America", "Asia", "Europe", "Europe", "Europe", "Africa", "Australia", "South America", "Europe", "Asia", "North America", "Asia", "Asia", "Africa", "Asia", "Asia", "Asia", "South America", "North America", "Africa", "Africa", "Africa", "South America", "North America", "Africa", "South America", "Europe", "Europe", "Africa", "North America", "North America", "South America", "Europe", "Africa", "Europe", "South America", "Africa", "Europe", "Europe", "Asia", "Australia", "Europe", "Africa", "Europe", "Africa", "North America", "North America", "Europe", "Asia", "Europe", "South America", "Africa", "South America", "North America", "South America", "Europe", "Europe", "Europe", "Asia", "Asia", "Europe", "Africa", "Asia", "Asia", "North America", "Asia", "Africa", "Australia", "Asia", "Asia", "Asia", "Europe", "Europe", "Europe", "Europe", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Europe", "Asia", "Asia", "North America", "Asia", "Africa", "Africa", "Australia", "Africa", "South America", "Europe", "Europe", "Europe", "Europe", "Europe", "Europe", "Australia", "Africa", "Europe", "Europe", "Asia", "Australia", "South America", "South America", "Australia", "South America", "South America","Asia", "Europe", "North America", "South America", "Australia", "Africa", "Asia", "Europe", "Asia", "North America", "Africa", "Asia", "Africa", "Africa", "Africa", "Africa", "Africa", "Europe", "Africa", "Asia", "Africa", "Europe", "Africa", "Europe", "Europe", "South America", "Asia", "Asia"," Australia","Africa", "Africa", "Africa", "Australia", "Africa", "Europe", "Europe", "North America", "Africa", "South America", "Asia", "Africa", "Africa", "Africa", "Africa", "Asia", "Asia", "Asia", "Australia", "Australia", "Europe", "Europe", "Europe")
 combined2 %>% 
   mutate(Continent = Continent) -> combined3
 Gdp_education_df <- combined3 %>% 
@@ -66,10 +66,37 @@ Gdp_education_df <- combined3 %>%
          RankEducationbasedonGDP = Rank)
 Gdp_education_df[148,24] <- "Australia"
 #---------------------------------------# end data wrangling for interactive map
-#---------------------# Data wrangling for scatterplot
+#--------------------------# Data wrangling for bar chart
 
+family_planning <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/reproductiveAgeWomen.csv")
+maternal_mortality <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/maternalMortalityRatio.csv")
+rank_family_planning <- c(1:119)
+rank_category <- c("Top 10", "Top 10","Top 10","Top 10","Top 10","Top 10","Top 10","Top 10","Top 10","Top 10","Rank 11-30", "Rank 11-30", "Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 11-30","Rank 31-50", "Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 31-50","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 51-70","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 71-90","Rank 91-110", "Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Rank 91-110","Bottom 9","Bottom 9","Bottom 9","Bottom 9","Bottom 9","Bottom 9","Bottom 9","Bottom 9","Bottom 9")
 
+family_planning <- family_planning %>%
+  rename(Country.Name = Location, percentage_fulfilled_family_planning = First.Tooltip)
 
+new_planning <- family_planning %>%
+  select(Country.Name, percentage_fulfilled_family_planning) %>%
+  arrange(-percentage_fulfilled_family_planning) %>%
+  mutate(family_planning_rank = rank_family_planning) %>%
+  mutate(Rank_category = rank_category)
+maternal_mortality$First.Tooltip <- str_replace(maternal_mortality$First.Tooltip, "\\[.*\\]", "")
+maternal_mortality$First.Tooltip <- as.numeric(as.character(maternal_mortality$First.Tooltip))
+new_mortality <- maternal_mortality %>%
+  mutate(maternal_mortality_ratio = (First.Tooltip / 10)) %>%
+  rename(Country.Name = Location) %>%
+  filter(Period == 2017) %>%
+  select(Country.Name, maternal_mortality_ratio) 
+
+planning_mortality <- left_join(new_planning, new_mortality, by = "Country.Name")
+planning_mortality[100, "Country.Name"] <- "Cote dIvoire"
+planning_mortality_long <- planning_mortality %>%
+  pivot_longer(c("percentage_fulfilled_family_planning", "maternal_mortality_ratio"), names_to = "Indicator", values_to = "Value")
+planning_mortality_long$family_planning_rank[duplicated(planning_mortality_long$family_planning_rank)] <- NA
+
+#-----------------------------# END DATA WRANGLING FOR BAR CHART
+#--------------------# Data wrangling for scatterplot
 ## Datasets of education and fertility
 #dataset1 = new_education
 fertility <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/Fertality_rate.csv")
@@ -91,10 +118,10 @@ scatterplot_df <- education_fertility_df %>%
 fixed_scatterplot_df <- scatterplot_df[-c(47, 63, 76),] %>% 
   rename(Continents = Continent)
 #-----------------# end scatterplot data wrangling 
+#--------------------------# end all data wrangling
 
-
-
-# Define server logic required to draw map
+#------------------# DEFINING SERVER LOGIC
+#------# Define server logic required to draw map
 shinyServer(function(input, output) {
   output$selectContinent <- renderUI({
     selectInput("Continent", "Choose a Continent", choices = unique(Gdp_education_df$Continent))
@@ -135,8 +162,27 @@ shinyServer(function(input, output) {
   output$gdp_education_map <- renderLeaflet({
     continent_data()
   })
-  
-  # Define Define server logic required to draw scatterplot
+#----------------------# END MAP
+#------------# DEFINE SERVER LOGIC REQUIRED TO DRAW BARCHART
+  output$selectRank_category <- renderUI({
+    selectInput("Rank_category", "Choose rank category", choices = unique(planning_mortality$Rank_category))
+  })
+  barchart <- reactive({
+    plot_rank <- planning_mortality %>%
+      filter(Rank_category %in% input$Rank_category) %>%
+      pivot_longer(c("percentage_fulfilled_family_planning", "maternal_mortality_ratio"), names_to = "Indicator", values_to = "Value")
+    
+    bar_chart <- ggplot(plot_rank, aes(x = Country.Name, y = Value, fill = Indicator)) +
+      geom_col(position = position_dodge(0.7)) +
+      labs(title = "Family planning versus Maternal mortality") 
+      
+    ggplotly(bar_chart) 
+  })
+  output$family_mortality_barchart <- renderPlotly({
+    barchart()
+  })
+#----------------------# END BARCHART
+#-------------------# Define Define server logic required to draw scatterplot
   
   output$selectContinents <- renderUI({
     selectInput("Continents", "Choose a Continent", choices = unique(fixed_scatterplot_df$Continents))
@@ -146,19 +192,21 @@ shinyServer(function(input, output) {
     plotContinent <- fixed_scatterplot_df %>% 
       filter(Continents %in% input$Continents)
     
-    ggplot(plotContinent, aes(x = avg_educ_attainment_2016_2021, y = BirthsPerWoman)) +
+    scatter_plot <- ggplot(plotContinent, aes(x = avg_educ_attainment_2016_2021, y = BirthsPerWoman)) +
       geom_point(aes(color = Country.Name)) +
       labs(
         x = "Education Levels",
         y = "Fertility Rate",
         title = "Education Level versus Fertility Rate in selected Continent")
+    ggplotly(scatter_plot)
     
   })
   
-  output$fertility_education_scatterplot <- renderPlot({
+  output$fertility_education_scatterplot <- renderPlotly({
     scatterplot()
   })
 })
+#-----------------------# END SCATTERPLOT
 
 
   
