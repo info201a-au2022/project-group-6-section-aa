@@ -6,6 +6,7 @@
 #
 #    http://shiny.rstudio.com/
 #
+
 library(shiny)
 library(plotly)
 library(tidyr) 
@@ -17,7 +18,7 @@ library(ggplot2)
 
 
 
-#Tab2: How does a country's GDP impact women’s education level?
+
 #data wrangling for map ------------------------------#
 #Create dataframe
 gdp <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-6-section-aa/main/data/GDP(current%20%20).csv")
@@ -65,6 +66,7 @@ Gdp_education_df <- combined3 %>%
          EducationRank = Education_ranking,
          RankEducationbasedonGDP = Rank)
 Gdp_education_df[148,24] <- "Australia"
+
 #---------------------------------------# end data wrangling for interactive map
 #--------------------------# Data wrangling for bar chart
 
