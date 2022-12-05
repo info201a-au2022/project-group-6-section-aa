@@ -158,13 +158,19 @@ page_five <- tabPanel(
                 This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population."),
     )
 )
+page_six <- tabPanel(
+  "Report",
+  titlePanel(strong("Report")),
+  mainPanel(source("../p01-proposal.md")),
+)
 ui <- navbarPage(
   "Womens Health",
   page_one,
   page_two,
   page_three, 
   page_four,
-  page_five
+  page_five, 
+  page_six
 )
 
 shinyUI(fluidPage(
