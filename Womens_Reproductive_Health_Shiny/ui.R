@@ -9,6 +9,15 @@
 
 library(shiny)
 library(bslib)
+library(plotly)
+library(tidyr) 
+library(leaflet)
+library(sf)
+library(rgdal)
+library(tidyverse)
+library(ggplot2)
+library(shinythemes)
+
   #theme = bs_theme(version = 4, bootswatch = "Morph"),
 page_one <- tabPanel(
   "Introduction",
@@ -131,26 +140,25 @@ page_five <- tabPanel(
   titlePanel(strong("Key Takeaways")),
     mainPanel(
       h3(strong("Does a country's GDP impact percentage of education attainment for women?")),
-      h4("In general we saw that a country's GDP does correlate with higher educational attainment. 
+      h5("In general we saw that a country's GDP does correlate with higher educational attainment. 
          However, this cannot be generalized as were instances where low GDP countries had relatively high percentages of educational attainment." ),
-      h3(strong("Connection to Womens Health:")),
-      h4("The overall rank is an indicator of how much a country prioritizes womens education because the rank shows us how much of the population of women above the age 25 received secondary education given its GDP. 
+      h4(strong("Connection to Womens Health:")),
+      h5("The overall rank is an indicator of how much a country prioritizes womens education because the rank shows us how much of the population of women above the age 25 received secondary education given its GDP. 
           It is also known that higher educational attainment is an indicator for healthy maternal health outcomes."),
       h3(strong("How does the fulfillment of family planning impact maternal mortality?")),
-      h4("In general we saw that higher rates of fulfillment of family planning reduce maternal mortality"),
-      h3(strong("Connection to Womens Health:")),
-      h4("From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlats to lower maternal mortality rates.
+      h5("In general we saw that higher rates of fulfillment of family planning reduce maternal mortality"),
+      h4(strong("Connection to Womens Health:")),
+      h5("From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlats to lower maternal mortality rates.
          This tells us of the importance of the fulfillment of family planning as an indicator of Womens Health. 
          Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, we can predit that having a population that has a higher percentage of fulfillment of family planning leads to better health of the population women."),
       h3(strong("How does women’s education level impact their fertility rate (births per woman)?")),
-      h4("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
-      h3(strong("Connection to Womens Health:")),
-      h4("We can predict from our data that in general higher educational attainment results in lower fertility rate.
+      h5("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
+      h4(strong("Connection to Womens Health:")),
+      h5("We can predict from our data that in general higher educational attainment results in lower fertility rate.
                 This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population."),
     )
 )
 ui <- navbarPage(
-  theme = bs_theme(version = 5, bootswatch = "minty"),
   "Womens Health",
   page_one,
   page_two,
@@ -159,5 +167,10 @@ ui <- navbarPage(
   page_five
 )
 
+shinyUI(fluidPage(
+  theme = shinytheme("flatly"),
+  img(src="header.png", height=150, width=1400),
+  ui
+))
   
  

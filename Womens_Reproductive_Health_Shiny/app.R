@@ -1,8 +1,14 @@
 #install.packages('rsconnect')
 
 library(shiny)
-library(bslib)
-
+library(plotly)
+library(tidyr) 
+library(leaflet)
+library(sf)
+library(rgdal)
+library(tidyverse)
+library(ggplot2)
+library(shinythemes)
 
 
 
