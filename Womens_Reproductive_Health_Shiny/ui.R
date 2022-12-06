@@ -135,6 +135,7 @@ page_four <- tabPanel(
     )
   )
 )
+
 page_five <- tabPanel(
   "Conclusion",
   titlePanel(strong("Key Takeaways")),
@@ -143,7 +144,7 @@ page_five <- tabPanel(
       h5("In general we saw that a country's GDP does correlate with higher educational attainment. 
          However, this cannot be generalized as were instances where low GDP countries had relatively high percentages of educational attainment." ),
       h4(strong("Connection to Womens Health:")),
-      h5("The overall rank is an indicator of how much a country prioritizes womens education because the rank shows us how much of the population of women above the age 25 received secondary education given its GDP. 
+      h5("The overall rank is an indicator of how much a country prioritizes womens' education because the rank shows us how much of the population of women above the age 25 received secondary education given its GDP. 
           It is also known that higher educational attainment is an indicator for healthy maternal health outcomes."),
       h3(strong("How does the fulfillment of family planning impact maternal mortality?")),
       h5("In general we saw that higher rates of fulfillment of family planning reduce maternal mortality"),
@@ -155,9 +156,9 @@ page_five <- tabPanel(
       h5("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
       h4(strong("Connection to Womens Health:")),
       h5("We can predict from our data that in general higher educational attainment results in lower fertility rate.
-                This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population."),
+                This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population.")
     )
-),
+)
 
 page_six <- tabPanel(
   "Report",
@@ -167,7 +168,7 @@ page_six <- tabPanel(
             h3(strong("Project title:")),
             h4("Women’s Health and Factors that lead to Certain Outcomes"),
             h3(strong("Authors:")),
-            h4("Eunji Shin (eunjiii@uw.edu), Keerthi Renduchintala (krendu@uw.edu) ,Lexi He (hze123@uw.edu)"),
+            h4("Eunji Shin (eunjiii@uw.edu), Keerthi Renduchintala (krendu@uw.edu), Lexi He (hze123@uw.edu)"),
             h3(strong("Affiliation:")),
             h4("INFO-201: Technical Foundations of Informatics - The Information School - University of Washington"),
             h3(strong("Date:")),
@@ -194,25 +195,26 @@ page_six <- tabPanel(
                A possible drawback from our project is that no causal claim can be made. As written in the article on causal effects of education on sexual and reproductive health in low and middle-income countries, we must understand that there are many other factors that play into the outcomes we are analyzing.
                An additional drawback is that women tend to have lower social status than men in most civilizations, which results in unequal power and relationships. Because of this, women are more vulnerable than men to violations of their human rights, such as sexual assault. Some benefits from this project are due to similar causes.
                Women are victims of gender inequality and are often ignored from discussions on a countries’ economy. Our project helps put women back into the conversation. We hope that our project will allow for people to see that maternal health is a topic to be discussed. From the project results, people will gradually realize the importance of maternal health.
-               Then the policy makers will make feasible policies to protect and support women. https://www.un.org/youthenvoy/2016/03/education-reproductive-health-girls-key-sustainable-development/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3703826"),
+               Then the policy makers will make feasible policies to protect and support women."),
+            h4("https://www.un.org/youthenvoy/2016/03/education-reproductive-health-girls-key-sustainable-development/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3703826"),
             h3(strong("Research Questions:")),
-            h4("**Does a country's GDP impact women’s education?**
-               We want to assess the correlation between how a country’s GDP can affect women’s education. Since we believe women's education is highly affected by a country’s GDP in such situations like a family is shorthanded for their farms, etc. This correlation will allow us to find reasons for lowered women’s education levels.
-               **How does the fulfillment of family planning impact maternal mortality?**
-               We want to assess how the percentage of women who have received family planning corresponds to mortality rates. We believe this is an important assessment to make because it will tell us a correlation that will help us answer the question of what factors lead to poor reproductive health.
-               There is a high likelihood that lower percentages of women receiving family planning will result in higher maternal mortality, but we want to make sure of this through the data. We can also measure the extent to which it occurs. We can use the data to see the extent to which family planning matters in lowering maternal mortality rates.
-               **How does women’s education level impact their maternal age?**
-               A woman's level of education is closely related to her knowledge of contraception, such as contraceptive pills and devices. And there are differences in abortion rates by the women’s education level. So we hope to find the relationship between women's education and usage of contraception through the research."),
+            h4(strong("Does a country's GDP impact women’s education?")),
+            h4("We want to assess the correlation between how a country’s GDP can affect women’s education. Since we believe women's education is highly affected by a country’s GDP in such situations like a family is shorthanded for their farms, etc. This correlation will allow us to find reasons for lowered women’s education levels."),
+            h4(strong("How does the fulfillment of family planning impact maternal mortality?")),
+            h4("We want to assess how the percentage of women who have received family planning corresponds to mortality rates. We believe this is an important assessment to make because it will tell us a correlation that will help us answer the question of what factors lead to poor reproductive health.
+               There is a high likelihood that lower percentages of women receiving family planning will result in higher maternal mortality, but we want to make sure of this through the data. We can also measure the extent to which it occurs. We can use the data to see the extent to which family planning matters in lowering maternal mortality rates."),
+            h4(strong("How does women’s education level impact their maternal age?")),
+            h4("A woman's level of education is closely related to her knowledge of contraception, such as contraceptive pills and devices. And there are differences in abortion rates by the women’s education level. So we hope to find the relationship between women's education and usage of contraception through the research."),
             h3(strong("The Dataset:")),
             h4("The first dataset is on countries GDP, this data will help us organize the most recent countries GDP. We will be able to mutate the data to compare a country's GDP with women's education levels to answer our research question. The data was collected by the World Bank throughout multiple years.
-               The World Bank collects this data in order to keep track of a country's economic performance. The data collection effort was funded by the World Bank and they are likely to benefit from the data. The data is credible because the World Bank is the international standard for keeping track of economic data. We obtained the data from a search on the World Bank's website.
-               The second dataset is on the educational attainment for the population of different countries. This dataset will be beneficial because we will be able to combine this dataset (while filtering for women) to figure out how a country's GDP correlates with a women's educational level. The data was collected by Unicef.
-               The dataset we are using comes from the years 2016 to 2021. Unicef collects this data for their mission. Funding is from voluntary contribution from governments, intergovernmental organizations, the private sector and individuals. These organizations are the ones that are gonna make money. Unicef is the global standard on data regarding women and children's health. We obtained the data from a search on Unicefs website.
-               The third data set is Women’s Reproductive Age. This data will help us know the married or in-union women of reproductive age who have their need for family planning. Then we can compare this data to the level of education of women for our research. The data world health statistics 2020 was collected by the World Health organization who updated it a year ago.
-               This dataset from Kaggle covers the most recent and updated health statistics of the world. The data was funded by Kaggle website the World Health organization and they are more likely to benefit from the data. The data is secure and credible because the world health organization is the United Nations agency and they work to promote health. We obtained the data from a search on the kaggle website and we link to the world health organization.
-               The fourth data set is about Maternal Mortality Rates. This data can see Births attended by skilled personnel and help us compare maternal mortality at which ages, and this can be well linked to education levels. The data is collected by the World Health Organization. The purpose is to collect the information of Maternal Mortality Rates.
-               The World Health Organization funded this data, and they are more likely to benefit from the data. The data is validated and held secure because the world health organization is the United Nations agency and their data are standard and secure. We first search on kaggle which is access to the general public and link to the data.
-               The fifth dataset shows the yearly fertility rate (births per woman) in each country. This dataset will enable us to answer the research questions by finding the correlations between this dataset and the datasets about a country's GDP, women's education, etc. The data is collected by the World Bank throughout decades of years from 1960 to 2020.
+               The World Bank collects this data in order to keep track of a country's economic performance. The data collection effort was funded by the World Bank and they are likely to benefit from the data. The data is credible because the World Bank is the international standard for keeping track of economic data. We obtained the data from a search on the World Bank's website."),
+            h4("The second dataset is on the educational attainment for the population of different countries. This dataset will be beneficial because we will be able to combine this dataset (while filtering for women) to figure out how a country's GDP correlates with a women's educational level. The data was collected by Unicef. The dataset we are using comes from the years 2016 to 2021.
+               Unicef collects this data for their mission. Funding is from voluntary contribution from governments, intergovernmental organizations, the private sector and individuals. These organizations are the ones that are gonna make money. Unicef is the global standard on data regarding women and children's health. We obtained the data from a search on Unicefs website."),
+            h4("The third data set is Women’s Reproductive Age. This data will help us know the married or in-union women of reproductive age who have their need for family planning. Then we can compare this data to the level of education of women for our research. The data world health statistics 2020 was collected by the World Health organization who updated it a year ago.
+               This dataset from Kaggle covers the most recent and updated health statistics of the world. The data was funded by Kaggle website the World Health organization and they are more likely to benefit from the data. The data is secure and credible because the world health organization is the United Nations agency and they work to promote health. We obtained the data from a search on the kaggle website and we link to the world health organization."),
+            h4("The fourth data set is about Maternal Mortality Rates. This data can see Births attended by skilled personnel and help us compare maternal mortality at which ages, and this can be well linked to education levels. The data is collected by the World Health Organization. The purpose is to collect the information of Maternal Mortality Rates.
+               The World Health Organization funded this data, and they are more likely to benefit from the data. The data is validated and held secure because the world health organization is the United Nations agency and their data are standard and secure. We first search on kaggle which is access to the general public and link to the data."),
+            h4("The fifth dataset shows the yearly fertility rate (births per woman) in each country. This dataset will enable us to answer the research questions by finding the correlations between this dataset and the datasets about a country's GDP, women's education, etc. The data is collected by the World Bank throughout decades of years from 1960 to 2020.
                It was collected to monitor each country's number of newborn babies every year. The World Bank borrows the money it lends to developing countries for economical improvements. The data is trustworthy since the World Bank databases' standards and norms are internationally accepted. We obtained the data from the World Bank website as it is open access to everyone."),
             h3(strong("Expected Implications:")),
             h4("The possible implications are that we can understand correlations between different factors that eventually lead to poor women’s health. Since women’s health is often an indicator of the health of a population, we hope that policymakers can address the largest causes of decreased women’s health. Policymakers will have the opportunity to make policy changes that allow for more women to receive an education and will also create policies to fund maternal health.
@@ -231,18 +233,28 @@ page_six <- tabPanel(
             h3(strong("Discussion:")),
             h4(""),
             h3(strong("Conclusion:")),
-            h4(""),
+            h4("From our project and through our key takeaways we are able to understand the relationship between the health indicators of GDP, Education Levels, Maternal Mortality, and Fertility rates, and Family Planning. Through the correlations between these indicators we were able to assess what indicators lead to what maternal health outcomes.
+               We saw that in general higher GDP countries have higher Educational Attainment, we also saw that Higher rates of completion of family planning correlate with lower maternal mortality. Finally we saw that higher education levels correlate with lower fertility rates. From the extend of the correlations we can highlight the importance of certain indicators.
+               We understand that having a high level of the population succesfully complete family planning drastically impacts maternal mortality. From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlates to lower maternal mortality rates. This tells us of the importance of the fulfillment of family planning as an indicator of Womens Health.
+               Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, we can predit that having a population that has a higher percentage of fulfillment of family planning leads to better health of the population women.
+               The other indicators of GDP was also important because it helped us see how educated the women are given that countries GDP. Our statistic of overall rank can be used to understand the how much a country prioritizes womens education as the rank shows us how much of the population of women above the age 25 received secondary education given its GDP.
+               It is also known that higher educational attainment is an indicator for healthy maternal health outcomes. Furthermore we were able to see that those high education levels result in low fertility rates. We can predict from our data that in general higher educational attainment results in lower fertility rate.
+               This leads us to a further prediction that receiving an adequate education means the females within the population are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population.In conclusion we were able to determine the correlations between the indicators of maternal health.
+               We can extend this further because these correlations help us understand the health of the population."),
             h3(strong("Acknowledgements:")),
             h4("We would like to thank the National Library of Medicine, the national center for biotechnology information."),
             h3(strong("References:")),
-            h4("“Data Warehouse.” UNICEF DATA, 29 Mar. 2021, https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.GN_ED_ATTN.F.&startPeriod=2016&endPeriod=2022. Davidson, Patricia M, et al.
-               “The Health of Women and Girls Determines the Health and Well-Being of Our Modern World: A White Paper from the International Council on Women's Health Issues.” Health Care for Women International, U.S. National Library of Medicine, Oct. 2011, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3703826/.
-               “Education and Reproductive Health for Girls Key to Sustainable Development.” United Nations, United Nations, https://www.un.org/youthenvoy/2016/03/education-reproductive-health-girls-key-sustainable-development/.
-               “GDP (Current US$).” Data, https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2020&start=2020. Psaki, Stephanie R, et al. “Causal Effects of Education on Sexual and Reproductive Health in Low and Middle-Income Countries: A Systematic Review and Meta-Analysis.” SSM - Population Health, Elsevier, 20 May 2019, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/. Zeus.
-               “World Health Statistics 2020: Complete: Geo-Analysis.” Kaggle, 2 June 2021, https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete?select=reproductiveAgeWomen.csv. “Fertility Rate, Total (Births per Woman).” Data, https://data.worldbank.org/indicator/SP.DYN.TFRT.IN"),
-            h3(strong("Appendix A:")),
-            h4("Questions")
-),
+            h4("“Data Warehouse.” UNICEF DATA, 29 Mar. 2021, https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=.GN_ED_ATTN.F.&startPeriod=2016&endPeriod=2022."),
+            h4("Davidson, Patricia M, et al. “The Health of Women and Girls Determines the Health and Well-Being of Our Modern World: A White Paper from the International Council on Women's Health Issues.” Health Care for Women International, U.S. National Library of Medicine, Oct. 2011, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3703826/."),
+            h4("“Education and Reproductive Health for Girls Key to Sustainable Development.” United Nations, United Nations, https://www.un.org/youthenvoy/2016/03/education-reproductive-health-girls-key-sustainable-development/."),
+            h4("“GDP (Current US$).” Data, https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2020&start=2020."),
+            h4("Psaki, Stephanie R, et al. “Causal Effects of Education on Sexual and Reproductive Health in Low and Middle-Income Countries: A Systematic Review and Meta-Analysis.” SSM - Population Health, Elsevier, 20 May 2019, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/."),
+            h4("Zeus. “World Health Statistics 2020: Complete: Geo-Analysis.” Kaggle, 2 June 2021, https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete?select=reproductiveAgeWomen.csv."),
+            h4("“Fertility Rate, Total (Births per Woman).” Data, https://data.worldbank.org/indicator/SP.DYN.TFRT.IN"),
+            h3(strong("Appendix A: Questions")),
+            h4("No questions."),
+  )
+)
 
 ui <- navbarPage(
   "Womens Health",
@@ -256,7 +268,7 @@ ui <- navbarPage(
 
 shinyUI(fluidPage(
   theme = shinytheme("flatly"),
-  img(src="header.png", height=150, width=1400),
+  img(src="header.png", height=150, width=1410),
   ui
 ))
   
