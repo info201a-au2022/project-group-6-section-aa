@@ -231,7 +231,12 @@ page_six <- tabPanel(
             h4("How does women’s education level impact their fertility rate (births per woman)?"),
             h5("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
             h3(strong("Discussion:")),
-            h4(""),
+            h4("From our project, we discovered that a higher country GDP leads to higher education attainment of women, a higher fulfillment of family planning leads to lower maternal mortality, and a higher women's education attainment leads to a lower fertility rate. 
+            These findings are important to note because it indicates that many factors can affect the fertility rate as well as women's health. Women's health is crucial because it is highly related to the fertility rate. The fertility rate is one of the aspects to analyze the well-being of a country since low fertility reduces the population size of the younger generation and eventually leads to the decline of the overall population. 
+            The reduction in the country's population will have negative implications for economic productivity and per capita income growth. Therefore, it is necessary to recognize what factors affect women's health for the well-being of countries. The primary factors we discovered from our project were the country's GDP, women's educational attainment, and the fulfillment of family planning. 
+            The scatterplot that analyzed the correlation between Women's educational attainment and the Fertility rate based on the European continent revealed that higher educational attainment leads to a higher fertility rate, despite the overall result based on all countries revealing that higher educational attainment leads to a lower fertility rate. 
+            However, since the countries on the European continent have higher women's educational attainment based on the Country's GDP compared to other countries, this indicates how a higher Country's GDP eventually leads to a higher fertility rate if they have advanced systems of gender equality. Thus, from this project, we can learn how a higher fertility rate does not necessarily come from a higher Country's GDP nor a higher women's educational attainment but the advanced systems of gender equality. 
+            Therefore, countries all around the world should implement advanced systems of gender equality for the country's overall well-being"),
             h3(strong("Conclusion:")),
             h4("From our project and through our key takeaways we are able to understand the relationship between the health indicators of GDP, Education Levels, Maternal Mortality, and Fertility rates, and Family Planning. Through the correlations between these indicators we were able to assess what indicators lead to what maternal health outcomes.
                We saw that in general higher GDP countries have higher Educational Attainment, we also saw that Higher rates of completion of family planning correlate with lower maternal mortality. Finally we saw that higher education levels correlate with lower fertility rates. From the extend of the correlations we can highlight the importance of certain indicators.
@@ -268,7 +273,6 @@ ui <- navbarPage(
 
 shinyUI(fluidPage(
   theme = shinytheme("flatly"),
-  img(src="header.png", height=150, width=1410),
   ui
 ))
   
