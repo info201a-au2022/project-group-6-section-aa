@@ -143,19 +143,19 @@ page_five <- tabPanel(
       h3(strong("Does a country's GDP impact percentage of education attainment for women?")),
       h5("In general, we saw that a country's GDP does correlate with higher educational attainment. 
          However, this cannot be generalized as there were instances where low GDP countries had relatively high percentages of educational attainment."),
-      h4(strong("Connection to Womens Health:")),
+      h4(strong("Connection to Women's Health:")),
       h5("The overall rank from the first graph is an indicator of how much a country prioritizes women's education because the rank shows us how much of the women population above the age 25 received secondary education given its GDP. 
           It is also known that higher educational attainment is an indicator for healthy maternal health outcomes."),
       h3(strong("How does the fulfillment of family planning impact maternal mortality?")),
       h5("In general, we saw that higher rates of fulfillment of family planning reduce maternal mortality."),
-      h4(strong("Connection to Womens Health:")),
+      h4(strong("Connection to Women's Health:")),
       h5("From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlats to lower maternal mortality rates.
          This tells us of the importance of the fulfillment of family planning as an indicator of Women's Health. 
          Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, 
          we can predict that having more population with a higher percentage of fulfillment of family planning leads to better health of women."),
       h3(strong("How does women’s education level impact their fertility rate (births per woman)?")),
       h5("In general, we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
-      h4(strong("Connection to Womens Health:")),
+      h4(strong("Connection to Women's Health:")),
       h5("From the third graph, we can predict that higher educational attainment generally results in lower fertility rate. 
          This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. 
          However, very low fertility rates are also an inidicator of an unhealthy population of the countries.")
@@ -198,7 +198,6 @@ page_six <- tabPanel(
                An additional drawback is that women tend to have lower social status than men in most civilizations, which results in unequal power and relationships. Because of this, women are more vulnerable than men to violations of their human rights, such as sexual assault. Some benefits from this project are due to similar causes.
                Women are victims of gender inequality and are often ignored from discussions on a countries’ economy. Our project helps put women back into the conversation. We hope that our project will allow for people to see that maternal health is a topic to be discussed. From the project results, people will gradually realize the importance of maternal health.
                Then the policy makers will make feasible policies to protect and support women."),
-            h4("https://www.un.org/youthenvoy/2016/03/education-reproductive-health-girls-key-sustainable-development/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3703826"),
             h3(strong("Research Questions:")),
             h4(strong("Does a country's GDP impact women’s education?")),
             h4("We want to assess the correlation between how a country’s GDP can affect women’s education. Since we believe women's education is highly affected by a country’s GDP in such situations like a family is shorthanded for their farms, etc. This correlation will allow us to find reasons for lowered women’s education levels."),
@@ -219,22 +218,26 @@ page_six <- tabPanel(
             h4("The fifth dataset shows the yearly fertility rate (births per woman) in each country. This dataset will enable us to answer the research questions by finding the correlations between this dataset and the datasets about a country's GDP, women's education, etc. The data is collected by the World Bank throughout decades of years from 1960 to 2020.
                It was collected to monitor each country's number of newborn babies every year. The World Bank borrows the money it lends to developing countries for economical improvements. The data is trustworthy since the World Bank databases' standards and norms are internationally accepted. We obtained the data from the World Bank website as it is open access to everyone."),
             h3(strong("Findings:")),
-            h4("Does a country's GDP impact percentage of education attainment for women?"),
-            h5("In general, we saw that a country's GDP does correlate with higher educational attainment.
-               However, this cannot be generalized as were instances where low GDP countries had relatively high percentages of educational attainment."),
+            h4("Does a country's GDP impact the percentage of educational attainment for women?"),
+            h5("In general, we saw that a country's GDP does correlate with higher educational attainment. However, this cannot be generalized as were instances where low GDP countries had relatively high percentages of educational attainment. 
+               Connection to Women's Health: The overall rank from the first graph is an indicator of how much a country prioritizes women's education because the rank shows us how much of the women population above the age of 25 received secondary education given its GDP. 
+               It is also known that higher educational attainment is an indicator of healthy maternal health outcomes."),
             h4("How does the fulfillment of family planning impact maternal mortality?"),
-            h5("In general, we saw that higher rates of fulfillment of family planning reduce maternal mortality."),
+            h5("In general, we saw that higher rates of the fulfillment of family planning reduce maternal mortality. Women's Health: From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlates to lower maternal mortality rates. 
+               This tells us of the importance of the fulfillment of family planning as an indicator of Women's Health. Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, we can predict that having more population with a higher percentage of fulfillment of family planning leads to better health of women."),
             h4("How does women’s education level impact their fertility rate (births per woman)?"),
-            h5("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
+            h5("In general, we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates. Women's Health: From the third graph, we can predict that higher educational attainment generally results in a lower fertility rate. 
+               This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an indicator of an unhealthy population in the countries."),
             h3(strong("Discussion:")),
             h4("From our project, we discovered that a higher country GDP leads to higher education attainment of women, a higher fulfillment of family planning leads to lower maternal mortality, and a higher women's education attainment leads to a lower fertility rate. 
-            These findings are important to note because it indicates that many factors can affect the fertility rate as well as women's health. Women's health is crucial because it is highly related to the fertility rate. The fertility rate is one of the aspects to analyze the well-being of a country since low fertility reduces the population size of the younger generation and eventually leads to the decline of the overall population. 
+            These findings are important to note because it indicates that many factors can affect the fertility rate as well as women's health. Women's health is crucial because it is highly related to the fertility rate. The fertility rate is one of the aspects to analyze the well-being of a country since a low fertility rate reduces the population size of the younger generation and eventually leads to the decline of the overall population. 
             The reduction in the country's population will have negative implications for economic productivity and per capita income growth. Therefore, it is necessary to recognize what factors affect women's health for the well-being of countries. The primary factors we discovered from our project were the country's GDP, women's educational attainment, and the fulfillment of family planning. 
-            The scatterplot that analyzed the correlation between Women's educational attainment and the Fertility rate based on the European continent revealed that higher educational attainment leads to a higher fertility rate, despite the overall result based on all countries revealing that higher educational attainment leads to a lower fertility rate. 
-            However, since the countries on the European continent have higher women's educational attainment based on the Country's GDP compared to other countries, this indicates how a higher Country's GDP eventually leads to a higher fertility rate if they have advanced systems of gender equality. Thus, from this project, we can learn how a higher fertility rate does not necessarily come from a higher Country's GDP nor a higher women's educational attainment but the advanced systems of gender equality. 
+            The scatterplot that analyzed the correlation between Women's educational attainment and the Fertility rate based on the European continent revealed that higher educational attainment leads to a higher fertility rate, despite the overall result based on all countries revealed that higher educational attainment leads to a lower fertility rate. 
+            However, since the countries on the European continent have higher women's educational attainment based on the Country's GDP compared to other countries, this indicates how a higher Country's GDP eventually leads to a higher fertility rate if they have advanced systems of gender equality. 
+            Thus, from this project, we can learn how a higher fertility rate does not necessarily come from a higher Country's GDP nor a higher women's educational attainment but the advanced systems of gender equality. 
             Therefore, countries all around the world should implement advanced systems of gender equality for the country's overall well-being"),
             h3(strong("Conclusion:")),
-            h4("From our project and through our key takeaways we are able to understand the relationship between the health indicators of GDP, Education Levels, Maternal Mortality, and Fertility rates, and Family Planning. Through the correlations between these indicators we were able to assess what indicators lead to what maternal health outcomes.
+            h4("From our project and through our key takeaways, we are able to understand the relationship between the health indicators of GDP, Education Levels, Maternal Mortality, and Fertility rates, and Family Planning. Through the correlations between these indicators we were able to assess what indicators lead to what maternal health outcomes.
                We saw that in general higher GDP countries have higher Educational Attainment, we also saw that Higher rates of completion of family planning correlate with lower maternal mortality. Finally we saw that higher education levels correlate with lower fertility rates. From the extend of the correlations we can highlight the importance of certain indicators.
                We understand that having a high level of the population succesfully complete family planning drastically impacts maternal mortality. From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlates to lower maternal mortality rates. This tells us of the importance of the fulfillment of family planning as an indicator of Womens Health.
                Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, we can predit that having a population that has a higher percentage of fulfillment of family planning leads to better health of the population women.
@@ -252,8 +255,6 @@ page_six <- tabPanel(
             h4("Psaki, Stephanie R, et al. “Causal Effects of Education on Sexual and Reproductive Health in Low and Middle-Income Countries: A Systematic Review and Meta-Analysis.” SSM - Population Health, Elsevier, 20 May 2019, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582211/."),
             h4("Zeus. “World Health Statistics 2020: Complete: Geo-Analysis.” Kaggle, 2 June 2021, https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete?select=reproductiveAgeWomen.csv."),
             h4("“Fertility Rate, Total (Births per Woman).” Data, https://data.worldbank.org/indicator/SP.DYN.TFRT.IN"),
-            h3(strong("Appendix A: Questions")),
-            h4("No questions."),
   )
 )
 
