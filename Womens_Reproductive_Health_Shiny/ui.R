@@ -141,22 +141,24 @@ page_five <- tabPanel(
   titlePanel(strong("Key Takeaways")),
     mainPanel(
       h3(strong("Does a country's GDP impact percentage of education attainment for women?")),
-      h5("In general we saw that a country's GDP does correlate with higher educational attainment. 
-         However, this cannot be generalized as were instances where low GDP countries had relatively high percentages of educational attainment." ),
+      h5("In general, we saw that a country's GDP does correlate with higher educational attainment. 
+         However, this cannot be generalized as there were instances where low GDP countries had relatively high percentages of educational attainment."),
       h4(strong("Connection to Womens Health:")),
-      h5("The overall rank is an indicator of how much a country prioritizes womens' education because the rank shows us how much of the population of women above the age 25 received secondary education given its GDP. 
+      h5("The overall rank from the first graph is an indicator of how much a country prioritizes women's education because the rank shows us how much of the women population above the age 25 received secondary education given its GDP. 
           It is also known that higher educational attainment is an indicator for healthy maternal health outcomes."),
       h3(strong("How does the fulfillment of family planning impact maternal mortality?")),
-      h5("In general we saw that higher rates of fulfillment of family planning reduce maternal mortality"),
+      h5("In general, we saw that higher rates of fulfillment of family planning reduce maternal mortality."),
       h4(strong("Connection to Womens Health:")),
       h5("From our Data, we are able to determine that a higher percentage of fulfillment of family planning correlats to lower maternal mortality rates.
-         This tells us of the importance of the fulfillment of family planning as an indicator of Womens Health. 
-         Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, we can predit that having a population that has a higher percentage of fulfillment of family planning leads to better health of the population women."),
+         This tells us of the importance of the fulfillment of family planning as an indicator of Women's Health. 
+         Furthermore, since we noticed that there is a drastic increase in maternal mortality as the fulfillment of family planning reaches lower percentages, 
+         we can predict that having more population with a higher percentage of fulfillment of family planning leads to better health of women."),
       h3(strong("How does women’s education level impact their fertility rate (births per woman)?")),
-      h5("In general we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
+      h5("In general, we saw that higher education levels (determined by educational attainment) correlate with lower fertility rates."),
       h4(strong("Connection to Womens Health:")),
-      h5("We can predict from our data that in general higher educational attainment results in lower fertility rate.
-                This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. However, very low fertility rates are also an inidicator of an unhealthy population.")
+      h5("From the third graph, we can predict that higher educational attainment generally results in lower fertility rate. 
+         This leads us to a further prediction that receiving an adequate education means they are more aware of their reproductive rights. 
+         However, very low fertility rates are also an inidicator of an unhealthy population of the countries.")
     )
 )
 
@@ -216,12 +218,6 @@ page_six <- tabPanel(
                The World Health Organization funded this data, and they are more likely to benefit from the data. The data is validated and held secure because the world health organization is the United Nations agency and their data are standard and secure. We first search on kaggle which is access to the general public and link to the data."),
             h4("The fifth dataset shows the yearly fertility rate (births per woman) in each country. This dataset will enable us to answer the research questions by finding the correlations between this dataset and the datasets about a country's GDP, women's education, etc. The data is collected by the World Bank throughout decades of years from 1960 to 2020.
                It was collected to monitor each country's number of newborn babies every year. The World Bank borrows the money it lends to developing countries for economical improvements. The data is trustworthy since the World Bank databases' standards and norms are internationally accepted. We obtained the data from the World Bank website as it is open access to everyone."),
-            h3(strong("Expected Implications:")),
-            h4("The possible implications are that we can understand correlations between different factors that eventually lead to poor women’s health. Since women’s health is often an indicator of the health of a population, we hope that policymakers can address the largest causes of decreased women’s health. Policymakers will have the opportunity to make policy changes that allow for more women to receive an education and will also create policies to fund maternal health.
-               Some other possible implications are that technologists can use the datasets and visualizations produced to further delve into finding correlations on a deeper level. These correlations can be used to find root causes and create infrastructures and policies that will combat these root causes. Lastly, designers could make feasible maternal-related educational resources that could be provided to women all over the world to teach them about unexpected circumstances in regard to their health and what to do in such circumstances."),
-            h3(strong("Limitations:")),
-            h4("By using the datasets we gathered, we can find the correlations between a country's GDP and women's education, the need for family planning and maternal mortality rates, and women's education and maternal age. However, there could be a confounding variable, an unmeasured variable that influences both variables. The confounding variable could mislead the results as the variables have high correlations when it's the confounding variable that has correlations in between. Some other limitations are the causal links we can make.
-               Since there are many other factors that influence the data, we cannot make any causal statements. We can only make statements on correlations or patterns. Furthermore, another limitation is that some of the data comes from older data and we are unable to make any assumptions about current data. Also due to some lacking data there are countries in the world that we will not be able to include in our project. This furthermore limits our ability to make assumptions."),
             h3(strong("Findings:")),
             h4("Does a country's GDP impact percentage of education attainment for women?"),
             h5("In general, we saw that a country's GDP does correlate with higher educational attainment.
