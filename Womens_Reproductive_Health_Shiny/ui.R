@@ -70,8 +70,9 @@ page_one <- tabPanel(
     The World Health Organization funded this data, and they are more likely to benefit from the data. The data is validated and held secure because the world health organization is the United Nations agency and their data are standard and secure. We first search on kaggle which is access to the general public and link to the data."),
     p("The fifth dataset shows the yearly fertility rate (births per woman) in each country. This dataset will enable us to answer the research questions by finding the correlations between this dataset and the datasets about a country's GDP, women's education, etc. The data is collected by the World Bank throughout decades of years from 1960 to 2020. 
     It was collected to monitor each country's number of newborn babies every year. The World Bank borrows the money it lends to developing countries for economical improvements. The data is trustworthy since the World Bank databases standards and norms are internationally accepted. We obtained the data from the World Bank website as it is open access to everyone."),
-    
-    
+    h3("Our key findings:"),
+    p("From this project, we will be finding the correlation between a country's GDP and women's educational attainment, fulfillment of family planning and maternal mortality rate, and women's educational attainment and fertility rate. 
+      The results we find throughout the project will allow us to find a way to improve women's health as well as a country's well-being since they have a strong connection in between."),
   )
 )
 )
